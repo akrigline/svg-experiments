@@ -13,22 +13,26 @@ class ChinaAnimated extends Component {
       path.setAttribute('stroke-dasharray', path.getTotalLength())
       path.setAttribute('stroke-dashoffset', path.getTotalLength())
       // Set the Animation Delay as expected before we increment it
-      path.style.animationDelay = `${animationDelay}ms`
+      path.style.animationDelay = this.props.animationDelay && `${animationDelay}ms`
       // Set the Animation duration and transition duration from props
       path.style.animationDuration = `${this.props.animationDuration}ms`
       path.style.transitionDuration = `${this.props.transitionDuration}ms`
       // Incrememnt the animation delay
       animationDelay = animationDelay + this.props.animationDelay
       // Set a timeout to coincide with when the line will be finished drawing to do other stuff to that path.
-      setTimeout(() => {
+      this.props.transitionDuration > 0 && setTimeout(() => {
         path.style.fillOpacity = 1
         path.style.strokeWidth = 1
       }, animationDelay + this.props.animationDuration)
     }
     // Set a timeout to coincide with when all the lines will be finished drawing to do some other stuff!
-    setTimeout(() => {
-      console.log('finished')
-    }, paths.length * this.props.animationDelay + this.props.animationDuration)
+    const animationCompleteTime = paths.length * this.props.animationDelay + this.props.animationDuration + this.props.transitionDuration
+    if (animationCompleteTime > 0) {
+      setTimeout(() => {
+        console.log('finished')
+        this.props.animationComplete()
+      }, animationCompleteTime)
+    }
   }
   render () {
     return (
@@ -39,6 +43,12 @@ class ChinaAnimated extends Component {
       </div>
     )
   }
+}
+
+ChinaAnimated.defaultProps = {
+  animationDelay: 0,
+  transitionDuration: 0,
+  animationDuration: 0
 }
 
 export default ChinaAnimated
