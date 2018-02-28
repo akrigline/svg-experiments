@@ -3,11 +3,9 @@
   max-width: 100%;
   height: 100vh;
   path {
-    stroke: red;
-    stroke-width: 1px;
+    stroke: rgba(200, 150, 255, 0.25);
+    stroke-width: 3px;
     fill: transparent;
-    stroke-dasharray:2000;
-    stroke-dashoffset:2000;
     animation: dash 5s linear forwards;
   }
 }
