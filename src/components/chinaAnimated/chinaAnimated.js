@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styles from './chinaAnimated.scss'
 import ChinaMap from '../../assets/svgs/chinaHigh.svg'
+import ChinaMapOptimized from '../../assets/svgs/chinaHigh-optimized.svg'
 
 class ChinaAnimated extends Component {
   componentDidMount () {
@@ -13,7 +14,9 @@ class ChinaAnimated extends Component {
   render () {
     return (
       <div ref={(div) => { this.chinaContainer = div }}>
-        <ChinaMap className={styles.chinaMap} />
+        {this.props.optimized
+          ? <ChinaMapOptimized className={styles.chinaMap} />
+          : <ChinaMap className={styles.chinaMap} />}
       </div>
     )
   }

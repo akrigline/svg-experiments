@@ -3,6 +3,9 @@ import { storiesOf } from '@storybook/react'
 import ChinaAnimated from './chinaAnimated'
 
 storiesOf('ChinaAnimated', module)
-  .add('renders', () => (
+  .add('unOptimized SVG', () => (
+    <ChinaAnimated />
+  ))
+  .add('SVG Optimized with vscode', () => (
     <ChinaAnimated />
   ))
