@@ -5,7 +5,9 @@
   path {
     stroke: rgba(200, 150, 255, 0.25);
     stroke-width: 3px;
-    fill: transparent;
+    fill-opacity: 0;
+    fill: red;
+    transition-property: all;
     animation: dash 5s linear forwards;
   }
 }
