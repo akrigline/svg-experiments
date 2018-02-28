@@ -1,9 +1,9 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import ChinaAnimated from './chinaAnimated'
+import ChinaAnimated from './chinaStrokeAnimation'
 
-storiesOf('ChinaAnimated', module)
+storiesOf('Chinese Provinces/Self-drawing stroke', module)
   .add('unoptimized SVG', () => (
     <ChinaAnimated
       animationDuration={3000}

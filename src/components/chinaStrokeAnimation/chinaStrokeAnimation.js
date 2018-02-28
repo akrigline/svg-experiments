@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import styles from './chinaAnimated.scss'
+import styles from './chinaStrokeAnimation.scss'
 import ChinaMap from '../../assets/svgs/chinaHigh.svg'
 import ChinaMapOptimized from '../../assets/svgs/chinaHigh-optimized.svg'
 
