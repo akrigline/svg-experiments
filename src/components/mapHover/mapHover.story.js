@@ -1,9 +1,9 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 // import { action } from '@storybook/addon-actions'
-import KeyboardAnimated from './keyboardAnimation'
+import MapHover from './mapHover'
 
-storiesOf('Keyboard', module)
+storiesOf('Map with Hover Symbols', module)
   .add('renders', () => (
-    <KeyboardAnimated />
+    <MapHover />
   ))
