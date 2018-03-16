@@ -8,7 +8,20 @@ module.exports = {
       {
         test: /\.svg$/,
         exclude: /node_modules/,
-        loader: require.resolve('svg-react-loader')
+        use: [
+          {
+            loader: require.resolve('react-svg-loader'),
+            options: {
+              svgo: {
+                plugins: [
+                  {
+                    'mergePaths': false
+                  }
+                ]
+              }
+            }
+          }
+        ]
       },
       {
         test: /\.scss$/,
